@@ -1,9 +1,8 @@
 class Geeqie < Formula
   desc "Lightweight Gtk+ based image viewer"
-  homepage "http://geeqie.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/geeqie/geeqie/geeqie-1.1/geeqie-1.1.tar.gz"
-  sha256 "5544e81c29917a647f19bfe800d9f0dd1cd5b890329feebd9abd80927e1afecf"
-  revision 2
+  homepage "http://www.geeqie.org/"
+  url "http://www.geeqie.org/geeqie-1.3.tar.xz"
+  sha256 "4b6f566dd1a8badac68c4353c7dd0f4de17f8627b85a7a70d5eb1ae3b540ec3f"
 
   bottle do
     sha256 "0e66dc0230ed6f10a29e7f9e14a4fe17cb8513ca868e55935783613eadd440ab" => :el_capitan
@@ -12,16 +11,25 @@ class Geeqie < Formula
   end
 
   depends_on "pkg-config" => :build
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
   depends_on "intltool" => :build
   depends_on "gettext"
-  depends_on "gtk+"
-  depends_on "gnu-getopt"
+  depends_on "gtk+3"
+  depends_on "gdk-pixbuf"
+  depends_on "pango"
+  depends_on "cairo"
+  depends_on "libtiff"
+  depends_on "jpeg"
+  depends_on "atk"
+  depends_on "glib"
   depends_on "imagemagick" => :recommended
   depends_on "exiv2" => :recommended
-  depends_on "little-cms" => :recommended
-  depends_on "fbida" => :recommended
+  depends_on "little-cms2" => :recommended
 
   def install
+    ENV["NOCONFIGURE"] = "yes"
+    system "./autogen.sh"
     system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--disable-glibtest",
