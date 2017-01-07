@@ -8,9 +8,9 @@ class Inkscape < Formula
   option "with-gtk3", "Build Inkscape with GTK+3 (Experimental)"
 
   bottle do
-    sha256 "ee5064b2c82543cb0edb8f0bc18b31218acf736e150023a4ae0f715191aaf54c" => :el_capitan
-    sha256 "fd736662bb632af27e49999f0e8a5b6c403d6ea647cc6d9e91d72aebc467e216" => :yosemite
-    sha256 "001db36d070bffe3697ed02472fb8ab670589734142600fa4af7f3e22e6fc380" => :mavericks
+    sha256 "16d7547e6b69e6c39aaba1dc35429a09f202c1c80aa6c8858e2db9d43279fc46" => :sierra
+    sha256 "7fbf9abafaf5aad37041122e0f0b8ca110df282cd3efffc3adea73c45eee4014" => :el_capitan
+    sha256 "b46487ca8fc59b9c8dd861a48d1619f7a26bba37277babd1ec3a05a69366278b" => :yosemite
   end
 
   head do
