@@ -44,7 +44,7 @@ index 9f9f1a2..6b18256 100644
 -  xournal_LDADD = ttsubset/libttsubset.a @PACKAGE_LIBS@ $(INTLLIBS) -lX11 -lz -lm
 +  xournal_LDADD = ttsubset/libttsubset.a @PACKAGE_LIBS@ $(INTLLIBS) -lz -lm
  endif
-
+ 
 diff --git a/src/xo-file.c b/src/xo-file.c
 index a1c19c9..14d5aa9 100644
 --- a/src/xo-file.c
@@ -52,7 +52,7 @@ index a1c19c9..14d5aa9 100644
 @@ -31,11 +31,6 @@
  #include <glib/gstdio.h>
  #include <poppler/glib/poppler.h>
-
+ 
 -#ifndef WIN32
 - #include <gdk/gdkx.h>
 - #include <X11/Xlib.h>
@@ -62,7 +62,7 @@ index a1c19c9..14d5aa9 100644
  #include "xo-interface.h"
  #include "xo-support.h"
 @@ -1275,50 +1270,8 @@ GList *attempt_load_gv_bg(char *filename)
-
+ 
  struct Background *attempt_screenshot_bg(void)
  {
 -#ifndef WIN32
@@ -75,8 +75,8 @@ index a1c19c9..14d5aa9 100644
 -  Window x_root, x_win;
 -
 -  x_root = gdk_x11_get_default_root_xwindow();
--
--  if (!XGrabButton(GDK_DISPLAY(), AnyButton, AnyModifier, x_root,
+-  
+-  if (!XGrabButton(GDK_DISPLAY(), AnyButton, AnyModifier, x_root, 
 -      False, ButtonReleaseMask, GrabModeAsync, GrabModeSync, None, None))
 -    return NULL;
 -
@@ -87,16 +87,16 @@ index a1c19c9..14d5aa9 100644
 -  if (x_win == None) x_win = x_root;
 -
 -  window = gdk_window_foreign_new_for_display(gdk_display_get_default(), x_win);
--
+-    
 -  gdk_window_get_geometry(window, &x, &y, &w, &h, NULL);
 -  cmap = gdk_drawable_get_colormap(window);
 -  if (cmap == NULL) cmap = gdk_colormap_get_system();
--
+-  
 -  pix = gdk_pixbuf_get_from_drawable(NULL, window,
 -     cmap, 0, 0, 0, 0, w, h);
--
+-    
 -  if (pix == NULL) return NULL;
--
+-  
 -  bg = g_new(struct Background, 1);
 -  bg->type = BG_PIXMAP;
 -  bg->canvas_item = NULL;
@@ -110,19 +110,19 @@ index a1c19c9..14d5aa9 100644
    return FALSE;
 -#endif
  }
-
+ 
  /************** pdf annotation ***************/
 diff --git a/src/xo-misc.c b/src/xo-misc.c
 index 2af7f43..0bc11f7 100644
 --- a/src/xo-misc.c
 +++ b/src/xo-misc.c
 @@ -2288,9 +2288,6 @@ void hide_unimplemented(void)
-   }
-
+   }  
+   
    /* screenshot feature doesn't work yet in Win32 */
 -#ifdef WIN32
 -  gtk_widget_hide(GET_COMPONENT("journalScreenshot"));
 -#endif
- }
-
+ }  
+ 
  // toggle fullscreen mode
