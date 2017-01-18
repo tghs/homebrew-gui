@@ -6,9 +6,10 @@ class Xournal < Formula
   revision 2
 
   bottle do
-    sha256 "c6b061589a660dec906fe6dd9d766a89337fa04e126bff36e24affd98cb6544c" => :el_capitan
-    sha256 "905312002cc878238e948d901a67fae44b8f88bfd92fdc3648f87e7efc527a66" => :yosemite
-    sha256 "8fc4405fde0ef2ad343c299072f3c359fcd75cca7e767271650b5f07b6d0cf87" => :mavericks
+    rebuild 1
+    sha256 "da8b7659d4d33bca6f446b8cd454ca10d0086a03ff5fb419a7f554126fa1cf0a" => :sierra
+    sha256 "ab1d16c326566bf3b46dfa9b652812c6199c11f0bf4978a7836d564851514917" => :el_capitan
+    sha256 "3ca23f0a3ab9e0a1b32602dff93af7bb4142a08a25ddc407b20c503da5513dbb" => :yosemite
   end
 
   depends_on "autoconf" => :build
