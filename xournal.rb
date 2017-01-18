@@ -45,10 +45,10 @@ index 9f9f1a2..6b18256 100644
  endif
 
 diff --git a/src/xo-file.c b/src/xo-file.c
-index a1c19c9..cc38d14 100644
+index a1c19c9..14d5aa9 100644
 --- a/src/xo-file.c
 +++ b/src/xo-file.c
-@@ -31,10 +31,6 @@
+@@ -31,11 +31,6 @@
  #include <glib/gstdio.h>
  #include <poppler/glib/poppler.h>
 
@@ -56,10 +56,11 @@ index a1c19c9..cc38d14 100644
 - #include <gdk/gdkx.h>
 - #include <X11/Xlib.h>
 -#endif
-
+-
  #include "xournal.h"
  #include "xo-interface.h"
-@@ -1275,50 +1271,8 @@ GList *attempt_load_gv_bg(char *filename)
+ #include "xo-support.h"
+@@ -1275,50 +1270,8 @@ GList *attempt_load_gv_bg(char *filename)
 
  struct Background *attempt_screenshot_bg(void)
  {
@@ -111,15 +112,15 @@ index a1c19c9..cc38d14 100644
 
  /************** pdf annotation ***************/
 diff --git a/src/xo-misc.c b/src/xo-misc.c
-index 2af7f43..f9003bd 100644
+index 2af7f43..0bc11f7 100644
 --- a/src/xo-misc.c
 +++ b/src/xo-misc.c
-@@ -2288,9 +2288,7 @@ void hide_unimplemented(void)
+@@ -2288,9 +2288,6 @@ void hide_unimplemented(void)
    }
 
    /* screenshot feature doesn't work yet in Win32 */
 -#ifdef WIN32
-   gtk_widget_hide(GET_COMPONENT("journalScreenshot"));
+-  gtk_widget_hide(GET_COMPONENT("journalScreenshot"));
 -#endif
  }
 
