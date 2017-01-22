@@ -1,0 +1,6 @@
+{
+  "hexchat": "caskroom/cask",
+  "inkscape": "caskroom/cask",
+  "meld": "caskroom/cask",
+  "transmission-remote-gtk": "caskroom/cask/transmission-remote-gui"
+}
