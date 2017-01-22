@@ -1,4 +1,5 @@
 {
+  "gtkwave": "caskroom/cask",
   "hexchat": "caskroom/cask",
   "inkscape": "caskroom/cask",
   "meld": "caskroom/cask",
