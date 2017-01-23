@@ -1,7 +1,15 @@
 {
+  "easy-tag": "homebrew/core",
+  "geeqie": "homebrew/core",
+  "gobby": "homebrew/core",
+  "gsmartcontrol": "homebrew/core",
+  "gtk-chtheme": "homebrew/core",
   "gtkwave": "caskroom/cask",
   "hexchat": "caskroom/cask",
   "inkscape": "caskroom/cask",
+  "klavaro": "homebrew/core",
   "meld": "caskroom/cask",
+  "tarsnap-gui": "homebrew/core",
+  "terminator": "homebrew/core",
   "transmission-remote-gtk": "caskroom/cask/transmission-remote-gui"
 }
