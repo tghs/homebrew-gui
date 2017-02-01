@@ -6,7 +6,7 @@
   "gtk-chtheme": "homebrew/core",
   "gtkwave": "caskroom/cask",
   "hexchat": "caskroom/cask",
-  "inkscape": "caskroom/cask",
+  "inkscape": "caskformula/caskformula",
   "klavaro": "homebrew/core",
   "meld": "caskroom/cask",
   "tarsnap-gui": "homebrew/core",
